@@ -1,0 +1,34 @@
+ALGORITHM problem2
+VAR
+    v1, v2 : ARRAY
+    i, j, n, pairs : INTEGER
+    ps : REAL
+BEGIN
+    WRITE("Enter number of pairs:")
+    READ(pairs)
+
+    FOR i := 1 TO pairs DO
+
+        WRITE("Enter dimension n:")
+        READ(n)
+
+        FOR j := 0 TO n-1 DO
+            WRITE("Enter v1[", j, "] :")
+            READ(v1[j])
+        END FOR
+
+        FOR j := 0 TO n-1 DO
+            WRITE("Enter v2[", j, "] :")
+            READ(v2[j])
+        END FOR
+
+        ps := dot_product(v1, v2, n)
+
+        IF ps = 0 THEN
+            WRITE("Vectors are orthogonal")
+        ELSE
+            WRITE("Vectors are NOT orthogonal")
+        ENDIF
+
+    END FOR
+END.
